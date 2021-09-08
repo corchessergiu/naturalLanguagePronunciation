@@ -113,6 +113,12 @@ describe("Million",function(){
     it("Should say nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine",function(){
         expect(say(999999999)).to.equal("nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine");
     })
+    it("Should say two hundred and one million one hundred and one",function(){
+        expect(say(201000101)).to.equal("two hundred and one million one hundred and one");
+    })
+    it("Should say two hundred million one thousand one hundred and one",function(){
+        expect(say(200001101)).to.equal("two hundred million one thousand one hundred and one");
+    })
 })
 
 describe("Billion", function(){
