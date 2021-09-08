@@ -1,7 +1,7 @@
 const {expect} =require("chai");
 const {say}=require("../src/nlpSrc");
 
-describe("Zero case",function(){
+describe("Under twenty cases",function(){
     it("Should say zero",function(){
         expect(say(0)).to.equal("zero");
     });
@@ -14,5 +14,8 @@ describe("Zero case",function(){
         expect(say(7)).to.equal("seven");
     });
     
+    it("Should say sixteen",function(){
+        expect(say(16)).to.equal("sixteen");
+    })
 
 });
