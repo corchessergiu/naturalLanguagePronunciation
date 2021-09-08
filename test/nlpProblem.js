@@ -90,4 +90,22 @@ describe("Million",function(){
     it("Should say one million",function(){
         expect(say(1000000)).to.equal("one million");
     })
+    it("Should say one million and one",function(){
+        expect(say(1000001)).to.equal("one million and one");
+    })
+    it("Should say two million",function(){
+        expect(say(2000000)).to.equal("two million");
+    })
+    it("Should say one hundred and sixty million three hundred and forty-three thousand one hundred and one",function(){
+        expect(say(160343101)).to.equal("one hundred sixty million three hundred forty-three thousand one hundred and one");
+    })
+    it("Should say two hundred million",function(){
+        expect(say(200000000)).to.equal("two hundred million");
+    })
+    it("Should say twenty hundred million",function(){
+        expect(say(20000000)).to.equal("twenty million");
+    })
+    it("Should say one hundred and one million one hundred and one thousand one hundred and one",function(){
+        expect(say(101101101)).to.equal("one hundred and one million one hundred and one thousand one hundred and one");
+    })
 })

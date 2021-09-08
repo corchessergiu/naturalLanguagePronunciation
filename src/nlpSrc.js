@@ -15,31 +15,52 @@ say = function (number) {
             if (number < 100) {
                 return numbers[number - number % 10] + "-" + numbers[number % 10];
             } else {
-                 if (number < 1000) {
-                u = number % 10;
-                z = Math.floor(number % 100 / 10);
-                s = Math.floor(number % 1000 / 100);
-                console.log(s+" "+ z+" "+u);
-                if (s != 0 && z!=0) {
-                    return say(Math.floor(number / 100)) + " " + numbers[100] + " " + say(number % 100);
-                }else{
-                    if (z != 0) {
-                        return say(Math.floor(number / 100)) + " " + numbers[100] + " " + say(number % 10);
-                    }else{
-
-                        if(u!=0 && z===0){
-                            return say(Math.floor(number / 100)) + " " + numbers[100] + " and " + say(number%10);
-                           }else{
-                            return say(Math.floor(number / 1000)) + " " + numbers[100];
-                           }
+                if (number < 1000) {
+                    u = number % 10;
+                    z = Math.floor(number % 100 / 10);
+                    s = Math.floor(number % 1000 / 100);
+                    if (s != 0 && z != 0) {
+                        return say(Math.floor(number / 100)) + " " + numbers[100] + " " + say(number % 100);
+                    } else {
+                        if (z != 0) {
+                            return say(Math.floor(number / 100)) + " " + numbers[100] + " " + say(number % 10);
+                        } else {
+                            if (u != 0 && z === 0) {
+                                return say(Math.floor(number / 100)) + " " + numbers[100] + " and " + say(number % 10);
+                            } else {
+                                return say(Math.floor(number / 100)) + " " + numbers[100];
+                            }
+                        }
                     }
-                }
                 } else {
-                    if (number < 1000000) {
-
+                    if (number < 1000000) {                
+                            if (number % 1000 < 10 && number % 1000 != 0) {
+                                return say(Math.floor(number / 1000)) + " " + numbers[1000] + " and " + say(number % 1000);
+                            } if (number % 1000 === 0) {
+                                return say(Math.floor(number / 1000)) + " " + numbers[1000];
+                            }
+                            else {
+                                return say(Math.floor(number / 1000)) + " " + numbers[1000] + " " + say(number % 1000);
+                            }      
                     } else {
                         if (number < 1000000000) {
-
+                            if ((Math.floor(number / 1000) % 1000) === 0 && number % 1000 == 0) {
+                                return say(Math.floor(number / 1000000)) + " " + numbers[1000000];
+                            } else {
+                                if ((Math.floor(number / 1000) % 1000) != 0 && number % 1000 != 0) {
+                                    return say(Math.floor(number / 1000000)) + " " + numbers[1000000] + " " + say(Math.floor(number / 1000) % 1000)+ " " + numbers[1000] + " " + say(number % 1000);
+                                } else {
+                                    if ((Math.floor(number / 1000) % 1000) === 0 && number % 1000 != 0) {
+                                        if (number % 1000 < 10) {
+                                            return say(Math.floor(number / 1000000)) + " " + numbers[1000000] + " and " + say(number % 1000);
+                                        } else {
+                                            if ((Math.floor(number / 1000) % 1000) != 0 && number % 1000 === 0) {
+                                                return say(Math.floor(number / 1000000)) + " " + numbers[1000000] + " " + say(Math.floor(number / 1000) % 1000);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
