@@ -35,4 +35,16 @@ describe("Hundreds",function(){
     it("Should say one hundred and five",function(){
         expect(say(105)).to.equal("one hundred and five");
     })
+    it("Should say nine hundred ninety-five",function(){
+        expect(say(995)).to.equal("nine hundred ninety-five");
+    })
+    it("Should say two hundred twenty-one",function(){
+        expect(say(221)).to.equal("two hundred twenty-one");
+    })
+    it("Should say seven hundred and one",function(){
+        expect(say(701)).to.equal("seven hundred and one");
+    })
+    it("Should say eight hundred eighty-eight",function(){
+        expect(say(888)).to.equal("eight hundred eighty-eight");
+    })
 })
