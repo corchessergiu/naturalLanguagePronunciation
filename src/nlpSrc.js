@@ -15,37 +15,27 @@ say = function (number) {
             if (number < 100) {
                 return numbers[number - number % 10] + "-" + numbers[number % 10];
             } else {
-                if (number < 1000) {
-                    tens = number % 100;
-                    z = Math.floor(tens / 10);
-                    if (number % 10 != 0 && z === 0) { //exemple 200
-                        return numbers[Math.floor(number / 100)] + " " + numbers[100] + " and " + numbers[number % 10];
-                    } else {
-                        if (number % 10 === 0 && z === 0) {
-                            return numbers[Math.floor(number / 100)] + " " + numbers[100]
-                        } else {
-                            return numbers[Math.floor(number / 100)] + " " + numbers[100] + " " + say(number % 100);
-                        }
+                 if (number < 1000) {
+                u = number % 10;
+                z = Math.floor(number % 100 / 10);
+                s = Math.floor(number % 1000 / 100);
+                console.log(s+" "+ z+" "+u);
+                if (s != 0 && z!=0) {
+                    return say(Math.floor(number / 100)) + " " + numbers[100] + " " + say(number % 100);
+                }else{
+                    if (z != 0) {
+                        return say(Math.floor(number / 100)) + " " + numbers[100] + " " + say(number % 10);
+                    }else{
+
+                        if(u!=0 && z===0){
+                            return say(Math.floor(number / 100)) + " " + numbers[100] + " and " + say(number%10);
+                           }else{
+                            return say(Math.floor(number / 1000)) + " " + numbers[100];
+                           }
                     }
+                }
                 } else {
                     if (number < 1000000) {
-                        u = number % 10;
-                        z = Math.floor(number % 100 / 10);
-                        s = Math.floor(number % 1000 / 100);
-                        console.log(s+" "+ z+" "+u);
-                        if (s != 0) {
-                            return say(Math.floor(number / 1000)) + " " + numbers[1000] + " " + say(number % 1000);
-                        } else {
-                            if (z != 0) {
-                                return say(Math.floor(number / 1000)) + " " + numbers[1000] + " " + say(number % 100);
-                            }else{
-                               if(u!=0){
-                                return say(Math.floor(number / 1000)) + " " + numbers[1000] + " and " + say(number%10);
-                               }else{
-                                return say(Math.floor(number / 1000)) + " " + numbers[1000];
-                               }
-                            }
-                        }
 
                     } else {
                         if (number < 1000000000) {
