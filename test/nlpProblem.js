@@ -68,4 +68,19 @@ describe("Thousand",function(){
     it("Should say eight thousand nine hundred forty",function(){
         expect(say(8940)).to.equal("eight thousand nine hundred forty");
     })
+    it("Should say eight thousand fifty",function(){
+        expect(say(8050)).to.equal("eight thousand fifty");
+    })
+    it("Should say one hundred and thirty-one thousand two hundred eleven",function(){
+        expect(say(131211)).to.equal("one hundred thirty-one thousand two hundred eleven");
+    })
+    it("Should say two hundred thousand",function(){
+        expect(say(200000)).to.equal("two hundred thousand");
+    })
+})
+
+describe("Million",function(){
+    it("Should say one million",function(){
+        expect(say(1000000)).to.equal("one million");
+    })
 })
