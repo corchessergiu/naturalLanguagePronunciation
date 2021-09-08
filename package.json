@@ -1,0 +1,20 @@
+{
+  "name": "nlp",
+  "version": "1.0.0",
+  "description": "Testing on git",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corchessergiu/naturalLanguagePronunciation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corchessergiu/naturalLanguagePronunciation/issues"
+  },
+  "homepage": "https://github.com/corchessergiu/naturalLanguagePronunciation#readme"
+}
