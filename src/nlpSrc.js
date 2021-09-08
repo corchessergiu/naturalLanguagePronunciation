@@ -1,4 +1,4 @@
-let numbers={0:"zero"}
+let numbers={0:"zero",1:"one"};
 
 say=function(number){
     if(number in numbers){
