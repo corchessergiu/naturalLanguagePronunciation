@@ -77,6 +77,13 @@ describe("Thousand",function(){
     it("Should say two hundred thousand",function(){
         expect(say(200000)).to.equal("two hundred thousand");
     })
+    it("Should say two hundred thousand and one",function(){
+        expect(say(200001)).to.equal("two hundred thousand and one");
+    })
+    it("Should say seventy thousand and one",function(){
+        expect(say(70001)).to.equal("seventy thousand and one");
+    })
+    
 })
 
 describe("Million",function(){
