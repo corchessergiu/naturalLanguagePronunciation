@@ -3,21 +3,21 @@ let numbers={0:"zero",1:"one",3:"three",4:"four",5:"five",6:"six",7:"seven",8:"e
 100:"hundred"};
 
 say=function(number){
-    if(number<100){
         if(number in numbers){
             return numbers[number];
         }else{
-            units=number%10;
-            tens=number-number%10;
-            return numbers[tens]+"-"+numbers[units];
+            if(number<100){
+                 units=number%10;
+                 tens=number-number%10;
+                 return numbers[tens]+"-"+numbers[units];
+            }else{
+                tens=number%100;
+                ten=Math.floor(tens/10);
+                if(ten===0){
+                    return numbers[Math.floor(number/100)]+" hundred and "+numbers[number%10];
+                }
+            }
         }
-    }else{
-        if(number>99){
-            if(number in numbers){
-                return numbers[number]
-            }e
-        }
-    }
 }
 
 module.exports={

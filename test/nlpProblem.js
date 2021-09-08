@@ -32,4 +32,7 @@ describe("Hundreds",function(){
     it("Should say hundred",function(){
         expect(say(100)).to.equal("hundred");
     })
+    it("Should say one hundred and five",function(){
+        expect(say(105)).to.equal("one hundred and five");
+    })
 })
