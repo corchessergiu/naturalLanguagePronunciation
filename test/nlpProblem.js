@@ -59,4 +59,13 @@ describe("Thousand",function(){
     it("Should say one thousand and six",function(){
         expect(say(1006)).to.equal("one thousand and six");
     })
+    it("Should say one thousand nine hundred ninety-nine",function(){
+        expect(say(1999)).to.equal("one thousand nine hundred ninety-nine");
+    })
+    it("Should say seven thousand eight hundred and one",function(){
+        expect(say(7801)).to.equal("seven thousand eight hundred and one");
+    })
+    it("Should say eight thousand nine hundred forty",function(){
+        expect(say(8940)).to.equal("eight thousand nine hundred forty");
+    })
 })

@@ -13,23 +13,23 @@ say = function (number) {
             return numbers[number];
         } else {
             if (number < 100) {
-                units = number % 10;
-                tens = number - number % 10;
-                return numbers[tens] + "-" + numbers[units];
+                return numbers[number - number % 10] + "-" + numbers[number % 10];
             } else {
                 if (number < 1000) {
                     tens = number % 100;
                     ten = Math.floor(tens / 10);
                     if (ten === 0) {
-                        return numbers[Math.floor(number / 100)] + " hundred and " + numbers[number % 10];
+                        return numbers[Math.floor(number / 100)]+ " "+ numbers[100]+" and " + numbers[number % 10];
                     } else {
-                        return numbers[Math.floor(number / 100)] + " hundred " + say(number % 100);
+                        return numbers[Math.floor(number / 100)]+ " "+ numbers[100]+ " "+say(number % 100);
                     }
                 } else {
                     z = Math.floor(number % 100 / 10);
                     s = Math.floor(number % 1000 / 100);
                     if (s === 0 && z === 0) {
                         return numbers[Math.floor(number / 1000)]+" "+numbers[1000]+" and "+numbers[number%10];
+                    }else{
+                        return numbers[Math.floor(number / 1000)]+" "+numbers[1000] + " "+say(number % 1000);
                     }
                 }
             }
