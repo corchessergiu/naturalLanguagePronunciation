@@ -17,5 +17,10 @@ describe("Under twenty cases",function(){
     it("Should say sixteen",function(){
         expect(say(16)).to.equal("sixteen");
     })
-
 });
+describe("Tens",function(){
+
+    it("Should say thirty-one",function(){
+        expect(say(31)).to.equal("thirty-one");
+    })
+})
