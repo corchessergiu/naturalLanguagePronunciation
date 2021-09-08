@@ -29,8 +29,8 @@ describe("Tens",function(){
 })
 
 describe("Hundreds",function(){
-    it("Should say hundred",function(){
-        expect(say(100)).to.equal("hundred");
+    it("Should say one hundred",function(){
+        expect(say(100)).to.equal("one hundred");
     })
     it("Should say one hundred and five",function(){
         expect(say(105)).to.equal("one hundred and five");
@@ -46,5 +46,17 @@ describe("Hundreds",function(){
     })
     it("Should say eight hundred eighty-eight",function(){
         expect(say(888)).to.equal("eight hundred eighty-eight");
+    })
+    it("Should say one hundred fifteeen",function(){
+        expect(say(115)).to.equal("one hundred fifteen");
+    })
+})
+
+describe("Thousand",function(){
+    it("Should say one thousand",function(){
+        expect(say(1000)).to.equal("one thousand");
+    })
+    it("Should say one thousand and six",function(){
+        expect(say(1006)).to.equal("one thousand and six");
     })
 })
