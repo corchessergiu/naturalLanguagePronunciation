@@ -9,5 +9,10 @@ describe("Zero case",function(){
     it("Should say one",function(){
         expect(say(1)).to.equal("one");
     });
-  
+    
+    it("Should say seven",function(){
+        expect(say(7)).to.equal("seven");
+    });
+    
+
 });
