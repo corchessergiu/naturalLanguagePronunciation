@@ -83,7 +83,9 @@ describe("Thousand",function(){
     it("Should say seventy thousand and one",function(){
         expect(say(70001)).to.equal("seventy thousand and one");
     })
-    
+    it("Should say three hundred and three thousand three hundred and three",function(){
+        expect(say(303303)).to.equal("three hundred and three thousand three hundred and three");
+    })
 })
 
 describe("Million",function(){
@@ -107,5 +109,14 @@ describe("Million",function(){
     })
     it("Should say one hundred and one million one hundred and one thousand one hundred and one",function(){
         expect(say(101101101)).to.equal("one hundred and one million one hundred and one thousand one hundred and one");
+    })
+    it("Should say nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine",function(){
+        expect(say(999999999)).to.equal("nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine");
+    })
+})
+
+describe("Billion", function(){
+    it("Should say one billion",function(){
+        expect(say(1000000000)).to.equal("one billion");
     })
 })
