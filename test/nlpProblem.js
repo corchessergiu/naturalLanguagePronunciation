@@ -266,6 +266,9 @@ describe("Over Trillion", function () {
         it("test with boolean",function(){
             expect(say(true)).to.equal("wrong input")
         })
+        it("test for numbers different",function(){
+            expect(say(0000032)).to.equal("thirty-two")
+        })
 
     })
 })
