@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/corchessergiu/naturalLanguagePronunciation#readme",
   "devDependencies": {
-    "bn.js": "^5.2.0"
+    "bn.js": "^5.2.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1"
   }
 }
