@@ -123,6 +123,21 @@ describe("Million",function(){
 
 describe("Billion", function(){
     it("Should say one billion",function(){
-        expect(say(1000000000)).to.equal("one billion");
+        expect(say(1_000_000_000)).to.equal("one billion");
+    })
+    it("Should say one hundred billion",function(){
+        expect(say(100_000_000_000)).to.equal("one hundred billion");
+    })
+    it("Should say one hundred twenty-three billion three hundred thirty-three million one hundred thousand one hundred and one",function(){
+        expect(say(123_333_100_101)).to.equal("one hundred twenty-three billion three hundred thirty-three million one hundred thousand one hundred and one");
+    })
+    it("Should say one hundred and one billion three hundred and three million one hundred and six thousand one hundred and one",function(){
+        expect(say(101_303_106_101)).to.equal("one hundred and one billion three hundred and three million one hundred and six thousand one hundred and one");
+    })
+    it("Should say one hundred and one billion one hundred and one",function(){
+        expect(say(101_000_000_101)).to.equal("one hundred and one billion one hundred and one");
+    })
+    it("Should say thirty billion nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred and nine",function(){
+        expect(say(30_999_999_909)).to.equal("thirty billion nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred and nine");
     })
 })

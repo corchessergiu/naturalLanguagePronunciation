@@ -43,7 +43,7 @@ say = function (number) {
                             return say(Math.floor(number / 1000)) + " " + numbers[1000] + " " + say(number % 1000);
                         }
                     } else {
-                        if (number < 1000000000) { //number from 1000001 to 999999999
+                        if (number < 1000000000) { //number from 1_000_001 to 999_999_999
                             if ((Math.floor(number / 1000) % 1000) === 0 && number % 1000 == 0) {
                                 return say(Math.floor(number / 1000000)) + " " + numbers[1000000];
                             } else {
@@ -51,10 +51,10 @@ say = function (number) {
                                     return say(Math.floor(number / 1000000)) + " " + numbers[1000000] + " " + say(Math.floor(number / 1000) % 1000) + " " + numbers[1000] + " " + say(number % 1000);
                                 } else {
                                     if ((Math.floor(number / 1000) % 1000) === 0 && number % 1000 != 0) {
-                                        if(number%1000<10){
-                                        return say(Math.floor(number / 1000000)) + " " + numbers[1000000] + " and " + say(number % 1000);
-                                        }else{
-                                            return say(Math.floor(number / 1000000)) + " " + numbers[1000000] + " " + say(number % 1000); 
+                                        if (number % 1000 < 10) {
+                                            return say(Math.floor(number / 1000000)) + " " + numbers[1000000] + " and " + say(number % 1000);
+                                        } else {
+                                            return say(Math.floor(number / 1000000)) + " " + numbers[1000000] + " " + say(number % 1000);
                                         }
                                     } else {
                                         if ((Math.floor(number / 1000) % 1000) != 0 && number % 1000 === 0) {
@@ -63,7 +63,15 @@ say = function (number) {
                                     }
                                 }
                             }
-                        } 
+                        } else {
+                            if (number < 1_000_000_000_000) {
+                                if (number % 1000000000 != 0) {
+                                    return say(Math.floor(number / 1000000000)) + " " + numbers[1000000000] + " " + say(number % 1000000000);
+                                } else {
+                                    return say(Math.floor(number / 1000000000)) + " " + numbers[1000000000];
+                                }
+                            }
+                        }
                     }
                 }
             }
