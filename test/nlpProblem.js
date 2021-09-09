@@ -192,4 +192,83 @@ describe("Over Trillion", function () {
         var nrr2 = new BN('31230111222333449');
         expect(say(nrr2)).to.equal("thirty-one thousand two hundred thirty trillion one hundred eleven billion two hundred twenty-two million three hundred thirty-three thousand four hundred forty-nine");
     })
+
+    describe("Negru tests",function(){
+        it("should say ",function(){
+            expect(say("")).to.equal("wrong input")
+        })
+        it("test with strings",function(){
+            expect(say("ssss")).to.equal("wrong input")
+        })
+
+        it("test with double/float",function(){
+            expect(say(10.3)).to.equal("wrong input")
+        })
+        it("test with negative double/float",function(){
+            expect(say(-12.3)).to.equal("wrong input")
+        })
+        it("test with negative double/float",function(){
+            expect(say(-12.3)).to.equal("wrong input")
+        })
+
+        it("test with object",function(){
+            expect(say({"da":"Nu"})).to.equal("wrong input")
+        })
+
+
+        it("test with over trillion",function(){
+            var nrr = new BN('310 230 111 222 333 440');
+            expect(say(nrr)).to.equal("three hundred ten thousand two hundred thirty trillion one hundred eleven billion two hundred twenty-two million three hundred thirty-three thousand four hundred forty")
+        })
+
+        it("test with over trillion",function(){
+            var nrr = new BN('301 203 111 222 333 404');
+            expect(say(nrr)).to.equal("three hundred and one thousand two hundred and three trillion one hundred eleven billion two hundred twenty-two million three hundred thirty-three thousand four hundred and four")
+        })
+
+        it("test with over trillion with 0 at the end for 100 000 000 000 000 000 ",function(){
+            var nrr = new BN('100 000 000 000 000 000');
+                             
+            expect(say(nrr)).to.equal("one hundred thousand trillion")
+        })
+
+        it("test with over trillion with 0 at the end for 100 000 000 000 100 000",function(){
+            var nrr = new BN('100 000 000 000 100 000');
+                             
+            expect(say(nrr)).to.equal("one hundred thousand trillion one hundred thousand")
+        })
+
+        it("test with over trillion with 0 at the end for 100 000 000 000 000",function(){
+            var nrr = new BN('100 000 000 000 000');
+                             
+            expect(say(nrr)).to.equal("one hundred trillion")
+        })
+
+        it("test with over trillion with 0 at the end for 100 000 000 000 000",function(){
+            var nrr = new BN('10 000 000 000 000 000');
+                             
+            expect(say(nrr)).to.equal("ten thousand trillion")
+        })
+
+        it("test with over trillion with 0 at the end for 100 000 000 000 000",function(){
+            var nrr = new BN('10 000 000 000 000');
+                             
+            expect(say(nrr)).to.equal("ten trillion")
+        })
+
+        it("test with null",function(){
+            expect(say(null)).to.equal("wrong input")
+        })
+
+        it("test with undefined",function(){
+            expect(say(undefined)).to.equal("wrong input")
+        })
+        it("test with boolean",function(){
+            expect(say(true)).to.equal("wrong input")
+        })
+        it("test for numbers different",function(){
+            expect(say(0000032)).to.equal("thirty-two")
+        })
+
+    })
 })

@@ -5,6 +5,7 @@ let numbers = {
     100: "hundred", 1000: "thousand", 1000000: "million", 1000000000: "billion", 1_000_000_000_000: "trillion"
 };
 
+
 say = function (number) {
     if (number < 0 || number > 999999999999999999n || typeof (number) === "string") {
         return "wrong input"
